@@ -1,24 +1,38 @@
-<p id="notice"><%= notice %></p>
+<div class="panel panel-primary">
+  <div class="panel-heading">
+    <h2 class="panel-title">
+      <%= @product.brand_and_name %>
+    </h2>
+  </div>
 
-<p>
-  <strong>Product sku:</strong>
-  <%= @product.sku %>
-</p>
+  <div class="panel-body">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Product name:</strong>
-  <%= @product.name %>
-</p>
+    <div class="row">
+      <div class="col-md-1">
+        <%= t('products.sku') %>
+      </div>
+      <div class="col-md-11">
+        <%= @product.sku %>
+      </div>
+    </div>
 
-<p>
-  <strong>Product type:</strong>
-  <%= @product.type %>
-</p>
+    <div class="row">
+      <div class="col-md-2">
+        <%= t('products.type') %>
+      </div>
+      <div class="col-md-10 ">
+        <%= @product.type %>
+      </div>
+    </div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @product.price %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+    <div class="row">
+      <div class="col-md-12">
+        <%= @product.price %>
+      </div>
+    </div>
+    <br/>
+    <%= link_to 'Edit', edit_product_path(@product), class:'btn btn-primary' %> |
+    <%= link_to 'Back', products_path, class:'btn btn-primary' %>
+  </div>
+</div>
